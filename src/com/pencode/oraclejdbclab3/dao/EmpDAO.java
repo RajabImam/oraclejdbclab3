@@ -5,7 +5,6 @@
  */
 package com.pencode.oraclejdbclab3.dao;
 
-import com.pencode.oraclejdbclab3.model.Dept;
 import com.pencode.oraclejdbclab3.model.Emp;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -37,6 +36,7 @@ public class EmpDAO extends DAO<Emp>{
                 emp.setEmpNo(rs.getLong(1));
                 emp.seteName(rs.getString(2));
                 emp.seteFirst(rs.getString(3));
+                //emp.setEmp(rs.getObject("mgr", Emp.class));
                 emp.setJob(rs.getString(4));
                 emp.setSal(rs.getInt(5));
                 

@@ -7,7 +7,9 @@ package com.pencode.oraclejdbclab3;
 
 import com.pencode.oraclejdbclab3.dao.DAO;
 import com.pencode.oraclejdbclab3.dao.DeptDAO;
+import com.pencode.oraclejdbclab3.dao.EmpDAO;
 import com.pencode.oraclejdbclab3.model.Dept;
+import com.pencode.oraclejdbclab3.model.Emp;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -138,8 +140,8 @@ public class Main {
      
     public static void main(String[] args) throws SQLException {
         Scanner input = new Scanner(System.in);
-        //System.out.println("Enter table name to display");
-        //String tableName = input.nextLine();
+        System.out.println("Enter table name to display");
+        String tableName = input.nextLine();
 
         try {
             //step1: load the driver class
@@ -155,7 +157,7 @@ public class Main {
             //displayDepartment();
             
             //Table name is taken from the keyboard
-            //displayTable(tableName);
+            displayTable(tableName);
             
             //moveDepartment(20, 7499);
             
@@ -167,6 +169,10 @@ public class Main {
 DAO<Dept> departmentDao = new DeptDAO(conn);
 Dept dept20 = departmentDao.find(20);
 System.out.println(dept20); 
+
+//DAO<Emp> empD = new EmpDAO(conn);
+//Emp empAllen = empD.find(7499);
+//System.out.println(empAllen);
 
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
